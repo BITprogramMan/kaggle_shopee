@@ -12,3 +12,4 @@
 
 <img src="figure/image-20210626184643462.png" alt="image-20210626184643462" style="zoom:80%;" />
 
++ 更多的数据介绍参考[这里](https://github.com/BITprogramMan/kaggle_shopee/blob/master/data_analysis.md)
