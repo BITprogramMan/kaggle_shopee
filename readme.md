@@ -13,3 +13,61 @@
 <img src="figure/image-20210626184643462.png" alt="image-20210626184643462" style="zoom:80%;" />
 
 + 更多的数据介绍参考[这里](https://github.com/BITprogramMan/kaggle_shopee/blob/master/data_analysis.md)
+
+### 模型
+
+![image-20210627201553310](figure/image-20210627201553310.png)
+
+#### image model
+
++ Efficient
++ eca_nfnet
+
+#### text model
+
++ BERT家族
+
+#### 损失函数
+
++ ArcFace
+
+> Additive Angular Margin Loss（ArcFace），以加法的方式惩罚深度特征与其相应权重之间的角度，从而同时增强了类内紧度和类间差异。可以理解为正则化的softmax
+
+$$
+L_{3}=-\frac{1}{N} \sum_{i=1}^{N} \log \frac{e^{s\left(\cos \left(\theta_{y_{i}}+m\right)\right)}}{e^{s\left(\cos \left(\theta_{y_{i}}+m\right)\right)}+\sum_{j=1, j \neq y_{i}}^{n} e^{s \cos \theta_{j}}}
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
