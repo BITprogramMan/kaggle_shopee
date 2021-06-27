@@ -27,37 +27,36 @@
 
 + BERT家族
 
+> 使用两大类模型分别得到image与text的embedding，然后使用KNN根据embedding的距离检索相同的商品
+
 #### 损失函数
 
 + ArcFace
 
 > Additive Angular Margin Loss（ArcFace），以加法的方式惩罚深度特征与其相应权重之间的角度，从而同时增强了类内紧度和类间差异。可以理解为正则化的softmax
 
-$$
-L_{3}=-\frac{1}{N} \sum_{i=1}^{N} \log \frac{e^{s\left(\cos \left(\theta_{y_{i}}+m\right)\right)}}{e^{s\left(\cos \left(\theta_{y_{i}}+m\right)\right)}+\sum_{j=1, j \neq y_{i}}^{n} e^{s \cos \theta_{j}}}
-$$
+<img src="figure/image-20210627203726095.png" alt="image-20210627203726095" style="zoom: 50%;" />
 
+### 融合模态信息
 
++ 分别使用image embedding与text embedding检索相同的商品，然后将两个结果聚合
++ 将image embedding与text embedding连接，形成多模态embedding，然后检索商品
 
++ 聚合前两种方法的结果
 
+> 第二种方法的结果优于第一种方法的结果，第三种方法结果优于第二种方法的结果
 
+### 迭代结果聚合
 
+> 基于QE(Query Expansion)和 DBA(DataBase Augmentation)的思路，作者实现步骤如下：
 
++ 步骤1：使用`fassi`完成内积计算，得到Top50个待选商品。
 
+- 步骤2：对待选商品加入相似度标记。
+- 步骤3（动态阈值调整）：根据赛题匹配组大小规律，每组肯定有2个或2个以上商品，所以根据匹配商品数量调整匹配和阈值。
+- 步骤4（Neighbor Blend）：基于上述匹配的商品组构建商品相似图，其中节点为具体商品，边为商品之间的相似度。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+[参考资料：https://www.kaggle.com/c/shopee-product-matching/discussion/238136](https://www.kaggle.com/c/shopee-product-matching/discussion/238136)
 
 
 
