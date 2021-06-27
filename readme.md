@@ -14,6 +14,10 @@
 
 + 更多的数据介绍参考[这里](https://github.com/BITprogramMan/kaggle_shopee/blob/master/data_analysis.md)
 
+### 评价指标
+
++ 平均F1分数
+
 ### 模型
 
 ![image-20210627201553310](figure/image-20210627201553310.png)
