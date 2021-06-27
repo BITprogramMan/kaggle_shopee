@@ -33,9 +33,9 @@
 
 > Additive Angular Margin Loss（ArcFace），以加法的方式惩罚深度特征与其相应权重之间的角度，从而同时增强了类内紧度和类间差异。可以理解为正则化的softmax
 
-$
+$$
 L_{3}=-\frac{1}{N} \sum_{i=1}^{N} \log \frac{e^{s\left(\cos \left(\theta_{y_{i}}+m\right)\right)}}{e^{s\left(\cos \left(\theta_{y_{i}}+m\right)\right)}+\sum_{j=1, j \neq y_{i}}^{n} e^{s \cos \theta_{j}}}
-$
+$$
 
 
 
